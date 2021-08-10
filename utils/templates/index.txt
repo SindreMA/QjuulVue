@@ -1,0 +1,8 @@
+$[import ${}$ from './components/${}$.vue']$
+
+const q = {
+    $[${}$]$,
+}
+export default q
+£{}£
+export { [${}$,] }
