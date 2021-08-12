@@ -1,5 +1,6 @@
+
 <template>
-  <${}$
+  <main
     :id="id"
     :key="key"
     :ref="ref"
@@ -18,7 +19,7 @@
     :style="getStyles"
   >
     <slot />
-  </${}$>
+  </main>
 </template>
 
 <script lang="ts">

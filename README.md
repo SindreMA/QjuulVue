@@ -1,4 +1,4 @@
-# qjuulvue2
+# qjuulvue
 
 ## Project setup
 ```

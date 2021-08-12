@@ -1,42 +1,6 @@
-const fs = require("fs");
-console.log("Creating QjuulVue");
-const componentDirectory = `../src/components/`;
 
-if (!fs.existsSync(componentDirectory)) {
-    fs.mkdirSync(componentDirectory);    
-}
-
-
-const tags = [
-  'h',
-  'h1',
-  'h2',
-  'h3',
-  'h4',
-  'h5',
-  'h6',
-  'spacer',
-  'main',
-  'p',
-  'div',
-  'header',
-  'section',
-  'cssp',
-  'p1',
-  'p2',
-  'p3',
-  'p4',
-  'p5',
-  'p6',
-  'a',
-  'ins',
-  'li',
-  'ul'
-]
-
-const getComponent = (name) => `
 <template>
-  <${name}
+  <h6
     :id="id"
     :key="key"
     :ref="ref"
@@ -55,7 +19,7 @@ const getComponent = (name) => `
     :style="getStyles"
   >
     <slot />
-  </${name}>
+  </h6>
 </template>
 
 <script lang="ts">
@@ -163,159 +127,133 @@ export default {
   },
   computed: {
     getStyles(): any {
-      return \`
-            \${
+      return `
+            ${
               this.frtl &&
               "display:flex; justify-content: flex-start; align-items: flex-start;"
             };
-            \${
+            ${
               this.frtr &&
               "display:flex; justify-content: flex-end; align-items: flex-start;"
             };
-            \${
+            ${
               this.frbl &&
               "display:flex; justify-content: flex-start; align-items: flex-end;"
             };
-            \${
+            ${
               this.frbr &&
               "display:flex; justify-content: flex-end; align-items: flex-end;"
             };
-            \${
+            ${
               this.frcl &&
               "display:flex; justify-content: flex-start; align-items: center;"
             };
-            \${
+            ${
               this.frcr &&
               "display:flex; justify-content: flex-end; align-items: center;"
             };
-            \${
+            ${
               this.frtc &&
               "display:flex; justify-content: center; align-items: flex-start;"
             };
-            \${
+            ${
               this.frbc &&
               "display:flex; justify-content: center; align-items: flex-end;"
             };
-            \${
+            ${
               this.frcc &&
               "display:flex; justify-content: center; align-items: center;"
             };
-            \${
+            ${
               this.fctl &&
               "display:flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;"
             };
-            \${
+            ${
               this.fctr &&
               "display:flex; flex-direction: column; align-items: flex-end; justify-content: flex-start;"
             };
-            \${
+            ${
               this.fcbl &&
               "display:flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;"
             };
-            \${
+            ${
               this.fcbr &&
               "display:flex; flex-direction: column; align-items: flex-end; justify-content: flex-end;"
             };
-            \${
+            ${
               this.fccl &&
               "display:flex; flex-direction: column; align-items: flex-start; justify-content: center;"
             };
-            \${
+            ${
               this.fccr &&
               "display:flex; flex-direction: column; align-items: flex-end; justify-content: center;"
             };
-            \${
+            ${
               this.fctc &&
               "display:flex; flex-direction: column; align-items: center; justify-content: flex-start;"
             };
-            \${
+            ${
               this.fcbc &&
               "display:flex; flex-direction: column; align-items: center; justify-content: flex-end;"
             };
-            \${
+            ${
               this.fccc &&
               "display:flex; flex-direction: column; align-items: center; justify-content: center;"
             };
-            \${this.fw && "flex-wrap: wrap;"};
-            \${this.fwr && \`flex-wrap: wrap-reverse;\`}
-            \${this.f1 && "flex: 1;"};
-            \${this.f2 && "flex: 2;"};
-            \${this.f3 && "flex: 3;"};
-            \${this.fflex && \`flex: \${this.fflex}\`};
-            \${this.fs0 && "flex-shrink: 0;"};
-            \${this.fsb && "justify-content: space-between;"};
-            \${this.fsa && "justify-content: space-around;"};
-            \${this.fse && "justify-content: space-evenly;"};
-            \${this.co && \`color: \${this.co};\`};
-            \${this.foWe && \`font-weight: \${this.foWe};\`};
-            \${this.bold && "font-weight: 700;"};
-            \${this.foSi && \`font-size: \${this.pxToRem(this.foSi)};\`};
-            \${this.w100 && "width: 100%;"};
-            \${this.pa && \`padding: \${this.pa};\`};
-            \${this.ma && \`margin: \${this.ma};\`};
-            \${this.baCo && \`background-color: \${this.baCo};\`};
-            \${this.label && \`label: -\${this.label};\`};
-            \${this.ovAu && \`overflow: auto;\`};
-            \${this.pointer && \`cursor: pointer\`};
-            \${
+            ${this.fw && "flex-wrap: wrap;"};
+            ${this.fwr && `flex-wrap: wrap-reverse;`}
+            ${this.f1 && "flex: 1;"};
+            ${this.f2 && "flex: 2;"};
+            ${this.f3 && "flex: 3;"};
+            ${this.fflex && `flex: ${this.fflex}`};
+            ${this.fs0 && "flex-shrink: 0;"};
+            ${this.fsb && "justify-content: space-between;"};
+            ${this.fsa && "justify-content: space-around;"};
+            ${this.fse && "justify-content: space-evenly;"};
+            ${this.co && `color: ${this.co};`};
+            ${this.foWe && `font-weight: ${this.foWe};`};
+            ${this.bold && "font-weight: 700;"};
+            ${this.foSi && `font-size: ${this.pxToRem(this.foSi)};`};
+            ${this.w100 && "width: 100%;"};
+            ${this.pa && `padding: ${this.pa};`};
+            ${this.ma && `margin: ${this.ma};`};
+            ${this.baCo && `background-color: ${this.baCo};`};
+            ${this.label && `label: -${this.label};`};
+            ${this.ovAu && `overflow: auto;`};
+            ${this.pointer && `cursor: pointer`};
+            ${
               this.ellipsis &&
-              \`white-space: nowrap;overflow: hidden;text-overflow: ellipsis;\`
+              `white-space: nowrap;overflow: hidden;text-overflow: ellipsis;`
             }
-            \${this.uppercase && "text-transform: uppercase;"}
-            \${this.lowercase && "text-transform: lowercase;"}
-            \${this.po && \`position: \${this.po};\`}
-            \${this.ov && \`overflow: \${this.ov};\`}
-            \${this.hide && "display: none;"}
-            \${this.nowrap && "white-space: nowrap;"}
-            \${this.z1 && "z-index: 1;"}
-            \${this.z && \`z-index: \${this.z};\`}
-            \${this.wi && \`width: \${this.wi};\`}
-            \${this.maxw && \`max-width: \${this.maxw};\`}
-            \${this.op && \`opacity: \${this.op};\`}
-            \${this.top && \`top: \${this.top};\`}
-            \${this.bo && \`bottom: \${this.bo};\`}
-            \${this.boRa && \`border-radius: \${this.boRa};\`}
-            \${this.le && \`left: \${this.le};\`}
-            \${this.ri && \`right: \${this.ri};\`}
-            \${this.maxh && \`max-height: \${this.maxh};\`}
-            \${this.minw && \`min-width: \${this.minw};\`}
-            \${this.minh && \`min-height: \${this.minh};\`}
-            \${this.liHe && \`line-height: \${this.liHe};\`}
-            \${this.he && \`height: \${this.he};\`};
-            \${this.foIt && \`font-style: italic;\`}
-            \${this.vw100 && "width: 100vw;"}
-            \${this.vh100 && "height: 100vh;"}
-            \${this.h100 && "height: 100%;"}
-            \${this.notvisible && \`visibility: hidden;\`}
-            \${this.txal && \`text-align: \${this.txal};\`}
-        \`;
+            ${this.uppercase && "text-transform: uppercase;"}
+            ${this.lowercase && "text-transform: lowercase;"}
+            ${this.po && `position: ${this.po};`}
+            ${this.ov && `overflow: ${this.ov};`}
+            ${this.hide && "display: none;"}
+            ${this.nowrap && "white-space: nowrap;"}
+            ${this.z1 && "z-index: 1;"}
+            ${this.z && `z-index: ${this.z};`}
+            ${this.wi && `width: ${this.wi};`}
+            ${this.maxw && `max-width: ${this.maxw};`}
+            ${this.op && `opacity: ${this.op};`}
+            ${this.top && `top: ${this.top};`}
+            ${this.bo && `bottom: ${this.bo};`}
+            ${this.boRa && `border-radius: ${this.boRa};`}
+            ${this.le && `left: ${this.le};`}
+            ${this.ri && `right: ${this.ri};`}
+            ${this.maxh && `max-height: ${this.maxh};`}
+            ${this.minw && `min-width: ${this.minw};`}
+            ${this.minh && `min-height: ${this.minh};`}
+            ${this.liHe && `line-height: ${this.liHe};`}
+            ${this.he && `height: ${this.he};`};
+            ${this.foIt && `font-style: italic;`}
+            ${this.vw100 && "width: 100vw;"}
+            ${this.vh100 && "height: 100vh;"}
+            ${this.h100 && "height: 100%;"}
+            ${this.notvisible && `visibility: hidden;`}
+            ${this.txal && `text-align: ${this.txal};`}
+        `;
     },
   },
 };
 </script>
-`
-
-tags.forEach((tag) => {
-    let fileName = `${componentDirectory}${tag}.vue`
-    const content = getComponent(tag)
-    if (fs.existsSync(fileName)) {
-        fs.unlinkSync(fileName);    
-    }        
-    fs.writeFileSync( `${fileName}`, content, {encoding:'utf8',flag:'w'} );
-});
-
-//Write index
-getImports = (name) => `import ${name} from './components/${name}.vue'
-`
-
-const indexContent = 
-`${tags.map(x=> getImports(x)).join('')}
-
-export default {
-    install (Vue, options) {
-        ${tags.map(x=> `Vue.component('q.${x}', ${x});`).join('\n        ')}
-    }
-}
-`
-fs.writeFileSync( `${componentDirectory}../index.js`, indexContent, {encoding:'utf8',flag:'w'} );
-console.log("Successfully created QjuulVue");
